@@ -37,7 +37,7 @@
   </ImportGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'" Label="QtSettings">
     <QtInstall>6.7.3_msvc2022_64</QtInstall>
-    <QtModules>core;gui;widgets</QtModules>
+    <QtModules>core;gui;widgets;sql</QtModules>
     <QtBuildConfig>debug</QtBuildConfig>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'" Label="QtSettings">
@@ -95,8 +95,26 @@
     <QtRcc Include="coffee_shop_management_system.qrc" />
     <QtUic Include="coffee_shop_management_system.ui" />
     <QtMoc Include="coffee_shop_management_system.h" />
+    <ClCompile Include="BUS\AuthService.cpp" />
     <ClCompile Include="coffee_shop_management_system.cpp" />
+    <ClCompile Include="DAL\DbConnection.cpp" />
+    <ClCompile Include="DAL\UserDAO.cpp" />
+    <ClCompile Include="GUI\AdminDashboard.cpp" />
+    <ClCompile Include="GUI\LoginDialog.cpp" />
+    <ClCompile Include="GUI\StaffDashboard.cpp" />
     <ClCompile Include="main.cpp" />
+    <QtUic Include="GUI\AdminDashboard.ui" />
+    <QtUic Include="GUI\LoginDialog.ui" />
+    <QtUic Include="GUI\StaffDashboard.ui" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="BUS\AuthService.h" />
+    <ClInclude Include="DAL\DbConnection.h" />
+    <ClInclude Include="DAL\UserDAO.h" />
+    <ClInclude Include="DTO\User.h" />
+    <QtMoc Include="GUI\StaffDashboard.h" />
+    <QtMoc Include="GUI\AdminDashboard.h" />
+    <QtMoc Include="GUI\LoginDialog.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Condition="Exists('$(QtMsBuild)\qt.targets')">
