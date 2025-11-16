@@ -8,13 +8,14 @@
 #include "GUI/StaffDashboard.h"
 #include <QSqlError>
 #include <QSqlDatabase>
+#include <GUI/ProductManagement.h>
 
 
 int main(int argc, char* argv[])
 {
     QApplication a(argc, argv);
 
-    // Kết nối DB sớm
+    //Kết nối DB sớm
     if (!DbConnection::connect()) {
 
         QMessageBox::critical(

@@ -102,7 +102,6 @@
     <ClCompile Include="DAL\ProductDAO.cpp" />
     <ClCompile Include="DAL\UserDAO.cpp" />
     <ClCompile Include="DTO\Category.cpp" />
-    <ClCompile Include="DTO\DiningTable.cpp" />
     <ClCompile Include="DTO\Ingredient.cpp" />
     <ClCompile Include="DTO\Inventory.cpp" />
     <ClCompile Include="DTO\Order.cpp" />
@@ -113,10 +112,12 @@
     <ClCompile Include="DTO\User.cpp" />
     <ClCompile Include="GUI\AdminDashboard.cpp" />
     <ClCompile Include="GUI\LoginDialog.cpp" />
+    <ClCompile Include="GUI\ProductManagement.cpp" />
     <ClCompile Include="GUI\StaffDashboard.cpp" />
     <ClCompile Include="main.cpp" />
     <QtUic Include="GUI\AdminDashboard.ui" />
     <QtUic Include="GUI\LoginDialog.ui" />
+    <QtUic Include="GUI\ProductManagement.ui" />
     <QtUic Include="GUI\StaffDashboard.ui" />
   </ItemGroup>
   <ItemGroup>
@@ -126,7 +127,6 @@
     <ClInclude Include="DAL\ProductDAO.h" />
     <ClInclude Include="DAL\UserDAO.h" />
     <ClInclude Include="DTO\Category.h" />
-    <ClInclude Include="DTO\DiningTable.h" />
     <ClInclude Include="DTO\Order.h" />
     <ClInclude Include="DTO\OrderItem.h" />
     <ClInclude Include="DTO\Product.h" />
@@ -135,6 +135,7 @@
     <ClInclude Include="DTO\RecipeItem.h" />
     <ClInclude Include="DTO\Role.h" />
     <ClInclude Include="DTO\User.h" />
+    <QtMoc Include="GUI\ProductManagement.h" />
     <QtMoc Include="GUI\StaffDashboard.h" />
     <QtMoc Include="GUI\AdminDashboard.h" />
     <QtMoc Include="GUI\LoginDialog.h" />

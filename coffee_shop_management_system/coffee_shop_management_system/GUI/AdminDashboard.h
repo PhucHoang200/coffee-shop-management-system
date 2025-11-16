@@ -1,6 +1,7 @@
 ﻿#pragma once
 #include <QMainWindow>
 #include "DTO/User.h"
+#include <QButtonGroup>
 
 namespace Ui { class AdminDashboard; }
 

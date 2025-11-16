@@ -14,6 +14,8 @@ public:
     static bool addProduct(const Product& p);
     static bool updateProduct(const Product& p);
     static bool deleteProduct(int productId);
+
+    // Search dùng DSA (QuickSort + BinarySearch)
     static vector<Product> searchProducts(const QString& keyword);
 };
 

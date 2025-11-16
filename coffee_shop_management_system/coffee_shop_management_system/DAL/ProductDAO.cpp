@@ -1,4 +1,4 @@
-#include "ProductDAO.h"
+﻿#include "ProductDAO.h"
 #include <QSqlQuery>
 #include <QVariant>
 #include <QSqlRecord>
@@ -9,6 +9,60 @@
 #include <QSqlError>
 #include <QString>
 using namespace std;
+
+// Hoán đổi 2 Product
+static void swapProduct(Product& a, Product& b) {
+    Product temp = a;
+    a = b;
+    b = temp;
+}
+
+int ProductDAO::partition(vector<Product>& arr, int left, int right) {
+    QString pivot = arr[right].getName();
+    int i = left - 1;
+
+    for (int j = left; j < right; j++) {
+        if (arr[j].getName().compare(pivot, Qt::CaseInsensitive) < 0) {
+            i++;
+            swapProduct(arr[i], arr[j]);
+        }
+    }
+    swapProduct(arr[i + 1], arr[right]);
+    return i + 1;
+}
+
+void ProductDAO::quickSort(vector<Product>& arr, int left, int right) {
+    if (left < right) {
+        int pi = partition(arr, left, right);
+        quickSort(arr, left, pi - 1);
+        quickSort(arr, pi + 1, right);
+    }
+}
+
+// Tìm vị trí đầu tiên có prefix (lower bound)
+int ProductDAO::binarySearchPrefix(const vector<Product>& arr, const QString& prefix) {
+    int left = 0, right = arr.size() - 1;
+    int result = -1;
+
+    while (left <= right) {
+        int mid = (left + right) / 2;
+        QString name = arr[mid].getName().toLower();
+        QString pre = prefix.toLower();
+
+        if (name.startsWith(pre)) {
+            result = mid;
+            right = mid - 1; // tìm xem còn cái nào trước đó nữa không
+        }
+        else if (name < pre) {
+            left = mid + 1;
+        }
+        else {
+            right = mid - 1;
+        }
+    }
+
+    return result;  // -1 nếu không có
+}
 
 vector<Product> ProductDAO::getAll() {
     vector<Product> list;
@@ -31,6 +85,12 @@ vector<Product> ProductDAO::getAll() {
         p.setImagePath(q.value("ImagePath").toString());
         list.push_back(p);
     }
+
+    // Sort bằng QuickSort thủ công
+    if (!list.empty()) {
+        quickSort(list, 0, list.size() - 1);
+    }
+
     return list;
 }
 
@@ -116,28 +176,28 @@ bool ProductDAO::remove(int productId) {
     return true;
 }
 
+// Tìm kiếm theo keyword nhập vào → tìm prefix (case-insensitive)
 vector<Product> ProductDAO::searchByName(const QString& keyword) {
-    vector<Product> list;
-    if (!DbConnection::database().isOpen()) {
-        if (!DbConnection::connect()) return list;
+    vector<Product> all = getAll();
+    vector<Product> result;
+
+    if (keyword.trimmed().isEmpty()) return all;
+
+    int start = binarySearchPrefix(all, keyword);
+
+    if (start == -1) return result;
+
+    QString kw = keyword.toLower();
+
+    // Lấy tất cả sản phẩm bắt đầu bằng prefix
+    for (int i = start; i < all.size(); i++) {
+        if (all[i].getName().toLower().startsWith(kw)) {
+            result.push_back(all[i]);
+        }
+        else {
+            break;
+        }
     }
 
-    QSqlQuery q(DbConnection::database());
-    q.prepare("SELECT ProductID, CategoryID, Name, Price, ImagePath FROM Products WHERE Name LIKE :kw ORDER BY Name");
-    q.bindValue(":kw", QString("%") + keyword + "%");
-    if (!q.exec()) {
-        qDebug() << "ProductDAO.searchByName exec error:" << q.lastError().text();
-        return list;
-    }
-
-    while (q.next()) {
-        Product p;
-        p.setProductId(q.value("ProductID").toInt());
-        p.setCategoryId(q.value("CategoryID").toInt());
-        p.setName(q.value("Name").toString());
-        p.setPrice(q.value("Price").toDouble());
-        p.setImagePath(q.value("ImagePath").toString());
-        list.push_back(p);
-    }
-    return list;
+    return result;
 }

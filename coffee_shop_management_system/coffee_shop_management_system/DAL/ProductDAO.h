@@ -7,6 +7,10 @@
 using namespace std;
 
 class ProductDAO {
+private:
+    static void quickSort(vector<Product>& arr, int left, int right);
+    static int partition(vector<Product>& arr, int left, int right);
+    static int binarySearchPrefix(const vector<Product>& arr, const QString& prefix);
 public:
     // CRUD
     static vector<Product> getAll();
