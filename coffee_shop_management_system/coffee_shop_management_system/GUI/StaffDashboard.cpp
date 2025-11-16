@@ -8,7 +8,7 @@ StaffDashboard::StaffDashboard(const User& loggedUser, QWidget* parent)
 {
     ui->setupUi(this);
 
-    setWindowTitle("Staff Dashboard - " + m_user.fullName);
+    setWindowTitle("Staff Dashboard - " + m_user.getFullName());
 }
 
 StaffDashboard::~StaffDashboard() {

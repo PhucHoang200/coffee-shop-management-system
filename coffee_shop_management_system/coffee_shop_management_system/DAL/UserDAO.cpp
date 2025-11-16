@@ -4,6 +4,8 @@
 #include <QSqlRecord>
 #include <QVariant>
 #include <QSqlError>
+#include <QDebug>
+#include <DTO/User.h>
 
 
 std::optional<User> UserDAO::findByUsername(const QString& username) {
@@ -27,12 +29,12 @@ std::optional<User> UserDAO::findByUsername(const QString& username) {
 
     if (q.next()) {
         User u;
-        u.userId = q.value("UserID").toInt();
-        u.username = q.value("Username").toString();
-        u.passwordHash = q.value("PasswordHash").toByteArray();
-        u.fullName = q.value("FullName").toString();
-        u.roleId = q.value("RoleID").toInt();
-        u.roleName = q.value("RoleName").toString();
+        u.setUserId(q.value("UserID").toInt());
+        u.setUsername(q.value("Username").toString());
+        u.setPasswordHash(q.value("PasswordHash").toByteArray());
+        u.setFullName(q.value("FullName").toString());
+        u.setRoleId(q.value("RoleID").toInt());
+
         return u;
     }
 

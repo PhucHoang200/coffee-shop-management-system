@@ -1,6 +1,6 @@
 #ifndef USER_H
 #define USER_H
-
+#pragma once
 #include <QString>
 #include <QDateTime>
 

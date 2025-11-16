@@ -9,7 +9,7 @@ AdminDashboard::AdminDashboard(const User& loggedUser, QWidget* parent)
     ui->setupUi(this);
 
     // Ví dụ hiển thị tên
-    setWindowTitle("Admin Dashboard - " + m_user.fullName);
+    setWindowTitle("Admin Dashboard - " + m_user.getFullName());
 }
 
 AdminDashboard::~AdminDashboard() {

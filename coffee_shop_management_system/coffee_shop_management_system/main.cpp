@@ -1,12 +1,14 @@
 ﻿#include <QApplication>
 #include "GUI/LoginDialog.h"
 #include <QMessageBox>
-#include "dal/DbConnection.h"
-#include "dto/User.h"
+#include "DAL/DbConnection.h"
+#include "DTO/User.h"
+#include <DTO/Role.h>
 #include "GUI/AdminDashboard.h"
 #include "GUI/StaffDashboard.h"
 #include <QSqlError>
 #include <QSqlDatabase>
+
 
 int main(int argc, char* argv[])
 {
@@ -36,12 +38,12 @@ int main(int argc, char* argv[])
     User u = optUser.value();
 
     // Mở form theo ROLE
-    if (u.roleName == "Admin") {
+    if (u.getRoleId() == 1) {
         AdminDashboard w(u);  // truyền user vào
         w.show();
         return a.exec();
     }
-    else if (u.roleName == "Staff") {
+    else if (u.getRoleId() == 2) {
         StaffDashboard w(u);
         w.show();
         return a.exec();

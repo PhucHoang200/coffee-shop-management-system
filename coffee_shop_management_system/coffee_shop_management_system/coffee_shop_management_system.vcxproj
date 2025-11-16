@@ -96,8 +96,10 @@
     <QtUic Include="coffee_shop_management_system.ui" />
     <QtMoc Include="coffee_shop_management_system.h" />
     <ClCompile Include="BUS\AuthService.cpp" />
+    <ClCompile Include="BUS\ProductService.cpp" />
     <ClCompile Include="coffee_shop_management_system.cpp" />
     <ClCompile Include="DAL\DbConnection.cpp" />
+    <ClCompile Include="DAL\ProductDAO.cpp" />
     <ClCompile Include="DAL\UserDAO.cpp" />
     <ClCompile Include="DTO\Category.cpp" />
     <ClCompile Include="DTO\DiningTable.cpp" />
@@ -119,7 +121,9 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="BUS\AuthService.h" />
+    <ClInclude Include="BUS\ProductService.h" />
     <ClInclude Include="DAL\DbConnection.h" />
+    <ClInclude Include="DAL\ProductDAO.h" />
     <ClInclude Include="DAL\UserDAO.h" />
     <ClInclude Include="DTO\Category.h" />
     <ClInclude Include="DTO\DiningTable.h" />
