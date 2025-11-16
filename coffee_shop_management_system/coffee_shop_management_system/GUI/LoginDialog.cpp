@@ -13,6 +13,34 @@ LoginDialog::LoginDialog(QWidget* parent)
     ui->setupUi(this);
     ui->editPassword->setEchoMode(QLineEdit::Password);
 
+    // --- THÊM STYLE TẠI ĐÂY ---
+    QString style =
+        "QLineEdit {"
+        "   border: 1px solid #CCCCCC;"
+        "   border-radius: 8px;"
+        "   padding: 6px;"
+        "   background: white;"
+        "}"
+        "QLineEdit:focus {"
+        "   border: 1px solid #0078D7;"
+        "}"
+
+        "QPushButton {"
+        "   background-color: #0078D7;"
+        "   color: white;"
+        "   border-radius: 10px;"
+        "   padding: 6px 12px;"
+        "}"
+        "QPushButton:hover {"
+        "   background-color: #005A9E;"
+        "}"
+        "QPushButton:pressed {"
+        "   background-color: #003F6B;"
+        "}";
+
+    this->setStyleSheet(style);
+    // ----------------------------------
+
     // DB connect
     if (!DbConnection::connect()) {
         QMessageBox::critical(this, "DB Error",
