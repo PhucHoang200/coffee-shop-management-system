@@ -1,5 +1,5 @@
 #include "AuthService.h"
-#include "../dal/UserDAO.h"
+#include "DAL/UserDAO.h"
 #include <QCryptographicHash>
 #include <QDebug>
 
@@ -17,7 +17,7 @@ std::optional<User> AuthService::login(const QString& username, const QString& p
     QByteArray providedHash = hashPassword(passwordPlain);
 
     // Compare raw bytes
-    if (u.passwordHash == providedHash) {
+    if (u.getPasswordHash() == providedHash) {
         // success
         return u;
     }

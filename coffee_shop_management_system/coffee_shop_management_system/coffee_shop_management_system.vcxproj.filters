@@ -88,6 +88,12 @@
     <ClCompile Include="DTO\OrderItem.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="DAL\ProductDAO.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="BUS\ProductService.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="DAL\DbConnection.h">
@@ -127,6 +133,12 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="DTO\DiningTable.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="BUS\ProductService.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="DAL\ProductDAO.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

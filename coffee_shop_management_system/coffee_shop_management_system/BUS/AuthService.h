@@ -1,5 +1,5 @@
 ﻿#pragma once
-#include "../dto/User.h"
+#include "DTO/User.h"
 #include <optional>
 
 class AuthService {
