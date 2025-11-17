@@ -13,5 +13,6 @@ public:
 
 private:
 	Ui::ProductManagementClass ui;
+	void loadProductsGrid();
 };
 

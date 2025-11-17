@@ -16,7 +16,7 @@ bool DbConnection::connect() {
     // ⭐ FIX: Connection string phải EXACTLY như sau (Không dư dấu ; cuối)
     QString connStr = QStringLiteral(
         "Driver={ODBC Driver 17 for SQL Server};"
-        "Server=DESKTOP-DE6G2CH\\SQLEXPRESS;"
+        "Server=localhost\\SQLEXPRESS;"
         "Database=CafeDB;"
         "Trusted_Connection=Yes;"
         "TrustServerCertificate=Yes;"

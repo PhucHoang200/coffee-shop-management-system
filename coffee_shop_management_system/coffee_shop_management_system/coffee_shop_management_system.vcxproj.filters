@@ -109,6 +109,9 @@
     <ClCompile Include="GUI\HomeWidget.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="DAL\ProductItemWidget.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="DAL\DbConnection.h">
@@ -182,6 +185,9 @@
     <QtMoc Include="GUI\HomeWidget.h">
       <Filter>Header Files</Filter>
     </QtMoc>
+    <QtMoc Include="DAL\ProductItemWidget.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
   </ItemGroup>
   <ItemGroup>
     <QtUic Include="GUI\LoginDialog.ui">
@@ -211,5 +217,10 @@
     <QtUic Include="GUI\HomeWidget.ui">
       <Filter>Form Files</Filter>
     </QtUic>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="..\x64\Debug\images\product1.jpg">
+      <Filter>Resource Files</Filter>
+    </Image>
   </ItemGroup>
 </Project>
