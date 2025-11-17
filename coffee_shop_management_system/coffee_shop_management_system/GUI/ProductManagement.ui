@@ -6,13 +6,19 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>600</width>
+    <width>1000</width>
     <height>640</height>
    </rect>
   </property>
+  <property name="minimumSize">
+   <size>
+    <width>1000</width>
+    <height>640</height>
+   </size>
+  </property>
   <property name="maximumSize">
    <size>
-    <width>600</width>
+    <width>1000</width>
     <height>16777215</height>
    </size>
   </property>
@@ -22,10 +28,10 @@
   <widget class="QScrollArea" name="scrollArea">
    <property name="geometry">
     <rect>
-     <x>0</x>
+     <x>50</x>
      <y>0</y>
      <width>600</width>
-     <height>640</height>
+     <height>641</height>
     </rect>
    </property>
    <property name="widgetResizable">
@@ -37,10 +43,23 @@
       <x>0</x>
       <y>0</y>
       <width>598</width>
-      <height>638</height>
+      <height>639</height>
      </rect>
     </property>
    </widget>
+  </widget>
+  <widget class="QPushButton" name="pushButton">
+   <property name="geometry">
+    <rect>
+     <x>650</x>
+     <y>20</y>
+     <width>121</width>
+     <height>51</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>PushButton</string>
+   </property>
   </widget>
  </widget>
  <layoutdefault spacing="6" margin="11"/>
