@@ -13,5 +13,6 @@ public:
 
 private:
 	Ui::OrderWidgetClass ui;
+	void loadProductsGrid();
 };
 
