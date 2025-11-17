@@ -96,9 +96,16 @@
     <QtUic Include="coffee_shop_management_system.ui" />
     <QtMoc Include="coffee_shop_management_system.h" />
     <ClCompile Include="BUS\AuthService.cpp" />
+    <ClCompile Include="BUS\CategoryService.cpp" />
     <ClCompile Include="BUS\ProductService.cpp" />
+    <ClCompile Include="BUS\RecipeService.cpp" />
     <ClCompile Include="coffee_shop_management_system.cpp" />
+    <ClCompile Include="DAL\CategoryDAO.cpp" />
     <ClCompile Include="DAL\DbConnection.cpp" />
+    <ClCompile Include="DAL\IngredientDAO.cpp" />
+    <ClCompile Include="DAL\InventoryDAO.cpp" />
+    <ClCompile Include="DAL\OrderDAO.cpp" />
+    <ClCompile Include="DAL\OrderItemDAO.cpp" />
     <ClCompile Include="DAL\ProductDAO.cpp" />
     <ClCompile Include="DAL\ProductItemWidget.cpp">
       <DynamicSource Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">input</DynamicSource>
@@ -106,6 +113,8 @@
       <DynamicSource Condition="'$(Configuration)|$(Platform)'=='Release|x64'">input</DynamicSource>
       <QtMocFileName Condition="'$(Configuration)|$(Platform)'=='Release|x64'">%(Filename).moc</QtMocFileName>
     </ClCompile>
+    <ClCompile Include="DAL\RecipeItemDAO.cpp" />
+    <ClCompile Include="DAL\RoleDAO.cpp" />
     <ClCompile Include="DAL\UserDAO.cpp" />
     <ClCompile Include="DTO\Category.cpp" />
     <ClCompile Include="DTO\Ingredient.cpp" />
@@ -138,10 +147,19 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="BUS\AuthService.h" />
+    <ClInclude Include="BUS\CategoryService.h" />
     <ClInclude Include="BUS\ProductService.h" />
+    <ClInclude Include="BUS\RecipeService.h" />
+    <ClInclude Include="DAL\CategoryDAO.h" />
     <ClInclude Include="DAL\DbConnection.h" />
+    <ClInclude Include="DAL\IngredientDAO.h" />
+    <ClInclude Include="DAL\InventoryDAO.h" />
+    <ClInclude Include="DAL\OrderDAO.h" />
+    <ClInclude Include="DAL\OrderItemDAO.h" />
     <ClInclude Include="DAL\ProductDAO.h" />
     <QtMoc Include="DAL\ProductItemWidget.h" />
+    <ClInclude Include="DAL\RecipeItemDAO.h" />
+    <ClInclude Include="DAL\RoleDAO.h" />
     <ClInclude Include="DAL\UserDAO.h" />
     <ClInclude Include="DTO\Category.h" />
     <ClInclude Include="DTO\Order.h" />

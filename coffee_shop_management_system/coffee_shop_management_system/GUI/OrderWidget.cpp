@@ -42,3 +42,4 @@ void OrderWidget::loadProductsGrid()
 
     // 4. Gán layout vào scrollAreaWidgetContents
     ui.scrollAreaWidgetContents->setLayout(grid);
+}
