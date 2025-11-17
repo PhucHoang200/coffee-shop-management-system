@@ -14,5 +14,7 @@ public:
 private:
 	Ui::ProductManagementClass ui;
 	void loadProductsGrid();
+	void onEditProduct(int id);
+	void onDeleteProduct(int id);
 };
 
