@@ -111,13 +111,23 @@
     <ClCompile Include="DTO\Role.cpp" />
     <ClCompile Include="DTO\User.cpp" />
     <ClCompile Include="GUI\AdminDashboard.cpp" />
+    <ClCompile Include="GUI\EmployeeWidget.cpp" />
+    <ClCompile Include="GUI\HomeWidget.cpp" />
+    <ClCompile Include="GUI\InventoryWidget.cpp" />
     <ClCompile Include="GUI\LoginDialog.cpp" />
+    <ClCompile Include="GUI\OrderWidget.cpp" />
     <ClCompile Include="GUI\ProductManagement.cpp" />
+    <ClCompile Include="GUI\ReportWidget.cpp" />
     <ClCompile Include="GUI\StaffDashboard.cpp" />
     <ClCompile Include="main.cpp" />
     <QtUic Include="GUI\AdminDashboard.ui" />
+    <QtUic Include="GUI\EmployeeWidget.ui" />
+    <QtUic Include="GUI\HomeWidget.ui" />
+    <QtUic Include="GUI\InventoryWidget.ui" />
     <QtUic Include="GUI\LoginDialog.ui" />
+    <QtUic Include="GUI\OrderWidget.ui" />
     <QtUic Include="GUI\ProductManagement.ui" />
+    <QtUic Include="GUI\ReportWidget.ui" />
     <QtUic Include="GUI\StaffDashboard.ui" />
   </ItemGroup>
   <ItemGroup>
@@ -135,6 +145,11 @@
     <ClInclude Include="DTO\RecipeItem.h" />
     <ClInclude Include="DTO\Role.h" />
     <ClInclude Include="DTO\User.h" />
+    <QtMoc Include="GUI\HomeWidget.h" />
+    <QtMoc Include="GUI\ReportWidget.h" />
+    <QtMoc Include="GUI\EmployeeWidget.h" />
+    <QtMoc Include="GUI\InventoryWidget.h" />
+    <QtMoc Include="GUI\OrderWidget.h" />
     <QtMoc Include="GUI\ProductManagement.h" />
     <QtMoc Include="GUI\StaffDashboard.h" />
     <QtMoc Include="GUI\AdminDashboard.h" />

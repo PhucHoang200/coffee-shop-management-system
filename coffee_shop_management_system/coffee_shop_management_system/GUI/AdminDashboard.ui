@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>1184</width>
-    <height>650</height>
+    <height>597</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -20,7 +20,7 @@
       <x>0</x>
       <y>-20</y>
       <width>200</width>
-      <height>641</height>
+      <height>651</height>
      </rect>
     </property>
     <property name="font">
@@ -45,6 +45,17 @@
        <height>50</height>
       </rect>
      </property>
+     <property name="sizeIncrement">
+      <size>
+       <width>0</width>
+       <height>3</height>
+      </size>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>20</pointsize>
+      </font>
+     </property>
      <property name="styleSheet">
       <string notr="true">QPushButton {
     border: none;
@@ -76,17 +87,22 @@ QPushButton:checked:hover {
 </string>
      </property>
      <property name="text">
-      <string>PushButton</string>
+      <string>Trang chủ</string>
      </property>
     </widget>
     <widget class="QPushButton" name="button2">
      <property name="geometry">
       <rect>
        <x>0</x>
-       <y>180</y>
+       <y>70</y>
        <width>200</width>
        <height>50</height>
       </rect>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>20</pointsize>
+      </font>
      </property>
      <property name="styleSheet">
       <string notr="true">QPushButton {
@@ -119,17 +135,22 @@ QPushButton:checked:hover {
 </string>
      </property>
      <property name="text">
-      <string>PushButton</string>
+      <string>Đơn hàng</string>
      </property>
     </widget>
     <widget class="QPushButton" name="button3">
      <property name="geometry">
       <rect>
        <x>0</x>
-       <y>310</y>
+       <y>120</y>
        <width>200</width>
        <height>50</height>
       </rect>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>20</pointsize>
+      </font>
      </property>
      <property name="styleSheet">
       <string notr="true">QPushButton {
@@ -162,7 +183,151 @@ QPushButton:checked:hover {
 </string>
      </property>
      <property name="text">
-      <string>PushButton</string>
+      <string>Sản phẩm</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="button4">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>170</y>
+       <width>200</width>
+       <height>50</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>20</pointsize>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QPushButton {
+    border: none;
+    background-color: rgb(250, 250, 250);   /* default */
+    color: black;
+    padding: 8px 16px;
+    border-radius: 20px;
+}
+
+/* Hover khi chưa checked */
+QPushButton:hover:!checked {
+    background-color: rgb(235, 235, 235);   /* hover nhẹ */
+}
+
+/* Khi nhấn */
+QPushButton:pressed {
+    background-color: rgb(210, 210, 210);
+}
+
+/* Khi checked (đang chọn) */
+QPushButton:checked {
+    background-color: rgb(200, 200, 200);
+}
+
+/* Hover khi đang checked (clicked) */
+QPushButton:checked:hover {
+    background-color: rgb(190, 190, 190);  /* đậm hơn chút */
+}
+</string>
+     </property>
+     <property name="text">
+      <string>Kho</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="button5">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>220</y>
+       <width>200</width>
+       <height>50</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>20</pointsize>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QPushButton {
+    border: none;
+    background-color: rgb(250, 250, 250);   /* default */
+    color: black;
+    padding: 8px 16px;
+    border-radius: 20px;
+}
+
+/* Hover khi chưa checked */
+QPushButton:hover:!checked {
+    background-color: rgb(235, 235, 235);   /* hover nhẹ */
+}
+
+/* Khi nhấn */
+QPushButton:pressed {
+    background-color: rgb(210, 210, 210);
+}
+
+/* Khi checked (đang chọn) */
+QPushButton:checked {
+    background-color: rgb(200, 200, 200);
+}
+
+/* Hover khi đang checked (clicked) */
+QPushButton:checked:hover {
+    background-color: rgb(190, 190, 190);  /* đậm hơn chút */
+}
+</string>
+     </property>
+     <property name="text">
+      <string>Nhân viên</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="button6">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>270</y>
+       <width>200</width>
+       <height>50</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>20</pointsize>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QPushButton {
+    border: none;
+    background-color: rgb(250, 250, 250);   /* default */
+    color: black;
+    padding: 8px 16px;
+    border-radius: 20px;
+}
+
+/* Hover khi chưa checked */
+QPushButton:hover:!checked {
+    background-color: rgb(235, 235, 235);   /* hover nhẹ */
+}
+
+/* Khi nhấn */
+QPushButton:pressed {
+    background-color: rgb(210, 210, 210);
+}
+
+/* Khi checked (đang chọn) */
+QPushButton:checked {
+    background-color: rgb(200, 200, 200);
+}
+
+/* Hover khi đang checked (clicked) */
+QPushButton:checked:hover {
+    background-color: rgb(190, 190, 190);  /* đậm hơn chút */
+}
+</string>
+     </property>
+     <property name="text">
+      <string>Báo cáo</string>
      </property>
     </widget>
    </widget>

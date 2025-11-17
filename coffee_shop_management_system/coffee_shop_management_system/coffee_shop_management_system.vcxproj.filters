@@ -94,6 +94,21 @@
     <ClCompile Include="GUI\ProductManagement.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="GUI\OrderWidget.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="GUI\InventoryWidget.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="GUI\EmployeeWidget.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="GUI\ReportWidget.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="GUI\HomeWidget.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="DAL\DbConnection.h">
@@ -152,6 +167,21 @@
     <QtMoc Include="GUI\ProductManagement.h">
       <Filter>Header Files</Filter>
     </QtMoc>
+    <QtMoc Include="GUI\OrderWidget.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="GUI\InventoryWidget.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="GUI\EmployeeWidget.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="GUI\ReportWidget.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="GUI\HomeWidget.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
   </ItemGroup>
   <ItemGroup>
     <QtUic Include="GUI\LoginDialog.ui">
@@ -164,6 +194,21 @@
       <Filter>Form Files</Filter>
     </QtUic>
     <QtUic Include="GUI\ProductManagement.ui">
+      <Filter>Form Files</Filter>
+    </QtUic>
+    <QtUic Include="GUI\OrderWidget.ui">
+      <Filter>Form Files</Filter>
+    </QtUic>
+    <QtUic Include="GUI\InventoryWidget.ui">
+      <Filter>Form Files</Filter>
+    </QtUic>
+    <QtUic Include="GUI\EmployeeWidget.ui">
+      <Filter>Form Files</Filter>
+    </QtUic>
+    <QtUic Include="GUI\ReportWidget.ui">
+      <Filter>Form Files</Filter>
+    </QtUic>
+    <QtUic Include="GUI\HomeWidget.ui">
       <Filter>Form Files</Filter>
     </QtUic>
   </ItemGroup>
