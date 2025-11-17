@@ -100,6 +100,12 @@
     <ClCompile Include="coffee_shop_management_system.cpp" />
     <ClCompile Include="DAL\DbConnection.cpp" />
     <ClCompile Include="DAL\ProductDAO.cpp" />
+    <ClCompile Include="DAL\ProductItemWidget.cpp">
+      <DynamicSource Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">input</DynamicSource>
+      <QtMocFileName Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">%(Filename).moc</QtMocFileName>
+      <DynamicSource Condition="'$(Configuration)|$(Platform)'=='Release|x64'">input</DynamicSource>
+      <QtMocFileName Condition="'$(Configuration)|$(Platform)'=='Release|x64'">%(Filename).moc</QtMocFileName>
+    </ClCompile>
     <ClCompile Include="DAL\UserDAO.cpp" />
     <ClCompile Include="DTO\Category.cpp" />
     <ClCompile Include="DTO\Ingredient.cpp" />
@@ -135,6 +141,7 @@
     <ClInclude Include="BUS\ProductService.h" />
     <ClInclude Include="DAL\DbConnection.h" />
     <ClInclude Include="DAL\ProductDAO.h" />
+    <QtMoc Include="DAL\ProductItemWidget.h" />
     <ClInclude Include="DAL\UserDAO.h" />
     <ClInclude Include="DTO\Category.h" />
     <ClInclude Include="DTO\Order.h" />
@@ -154,6 +161,9 @@
     <QtMoc Include="GUI\StaffDashboard.h" />
     <QtMoc Include="GUI\AdminDashboard.h" />
     <QtMoc Include="GUI\LoginDialog.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="..\x64\Debug\images\product1.jpg" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Condition="Exists('$(QtMsBuild)\qt.targets')">

@@ -6,26 +6,13 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>600</width>
-    <height>400</height>
+    <width>1000</width>
+    <height>640</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>HomeWidget</string>
   </property>
-  <widget class="QPushButton" name="pushButton">
-   <property name="geometry">
-    <rect>
-     <x>50</x>
-     <y>90</y>
-     <width>381</width>
-     <height>131</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string>home</string>
-   </property>
-  </widget>
  </widget>
  <layoutdefault spacing="6" margin="11"/>
  <resources/>
