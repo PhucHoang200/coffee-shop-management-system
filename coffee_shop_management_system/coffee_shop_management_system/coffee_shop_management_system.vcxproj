@@ -98,7 +98,7 @@
     <ClCompile Include="BUS\AuthService.cpp" />
     <ClCompile Include="BUS\CategoryService.cpp" />
     <ClCompile Include="BUS\ProductService.cpp" />
-    <ClCompile Include="BUS\RecipeService.cpp" />
+    <ClCompile Include="BUS\RecipeItemService.cpp" />
     <ClCompile Include="coffee_shop_management_system.cpp" />
     <ClCompile Include="DAL\CategoryDAO.cpp" />
     <ClCompile Include="DAL\DbConnection.cpp" />
@@ -149,7 +149,7 @@
     <ClInclude Include="BUS\AuthService.h" />
     <ClInclude Include="BUS\CategoryService.h" />
     <ClInclude Include="BUS\ProductService.h" />
-    <ClInclude Include="BUS\RecipeService.h" />
+    <ClInclude Include="BUS\RecipeItemService.h" />
     <ClInclude Include="DAL\CategoryDAO.h" />
     <ClInclude Include="DAL\DbConnection.h" />
     <ClInclude Include="DAL\IngredientDAO.h" />
