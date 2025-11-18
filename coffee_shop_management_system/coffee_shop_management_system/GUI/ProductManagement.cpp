@@ -52,7 +52,7 @@ void ProductManagement::loadProductsGrid()
     for (auto& p : products)
     {
         // --- Lấy dữ liệu category ---
-        Category cat = CategoryService::getCategoryById(p.getCategoryId());
+        Category cat = CategoryService::getCategory(p.getCategoryId());
 
         // --- Tính giá vốn (cost) từ Recipe ---
         double costPrice = RecipeService::calculateCostForProduct(p.getProductId());
