@@ -19,6 +19,7 @@ public:
 
     // Optional: Search dùng DSA (nếu sau này bạn muốn)
     static vector<RecipeItem> searchByIngredientId(int ingredientId);
+    static double calculateCostForProduct(int productId);
 };
 
 #endif // RECIPEITEMSERVICE_H

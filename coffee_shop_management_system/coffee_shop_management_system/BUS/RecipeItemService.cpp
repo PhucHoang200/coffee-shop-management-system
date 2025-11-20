@@ -1,5 +1,6 @@
-#include "RecipeItemService.h"
+﻿#include "RecipeItemService.h"
 #include "DAL/RecipeItemDAO.h"
+#include "DAL/IngredientDAO.h"
 #include <QDebug>
 
 vector<RecipeItem> RecipeItemService::getAllRecipeItems() {
@@ -50,3 +51,28 @@ vector<RecipeItem> RecipeItemService::searchByIngredientId(int ingredientId) {
 
     return result;
 }
+
+double RecipeItemService::calculateCostForProduct(int productId) {
+    if (productId <= 0) return 0;
+
+    // Lấy tất cả nguyên liệu của sản phẩm
+    vector<RecipeItem> items = RecipeItemDAO::getByProductId(productId);
+
+    double total = 0;
+
+    for (const RecipeItem& item : items) {
+
+        // 1. Lấy ingredient từ DAL
+        auto optIng = IngredientDAO::getById(item.getIngredientId());
+        if (!optIng.has_value()) continue;
+
+        // 2. Lấy giá costPerUnit từ DTO Ingredient
+        double unitPrice = optIng->getCostPerUnit();
+
+        // 3. Tính giá vốn
+        total += item.getQuantityPerUnit() * unitPrice;
+    }
+
+    return total;
+}
+

@@ -1,7 +1,7 @@
 ﻿#include "GUI/ProductManagement.h"
 #include "BUS/ProductService.h"
 #include "BUS/CategoryService.h"
-#include "BUS/RecipeService.h"
+#include "BUS/RecipeItemService.h"
 #include "DTO/Category.h"
 #include "DTO/Product.h"
 
@@ -51,11 +51,15 @@ void ProductManagement::loadProductsGrid()
     // 3. Load từng sản phẩm vào một dòng
     for (auto& p : products)
     {
-        // --- Lấy dữ liệu category ---
-        Category cat = CategoryService::getCategory(p.getCategoryId());
+        auto optCat = CategoryService::getCategory(p.getCategoryId());
+        QString categoryName = "Không có";
+
+        if (optCat.has_value()) {
+            categoryName = optCat->getName();
+        }
 
         // --- Tính giá vốn (cost) từ Recipe ---
-        double costPrice = RecipeService::calculateCostForProduct(p.getProductId());
+        double costPrice = RecipeItemService::calculateCostForProduct(p.getProductId());
 
         // ============ Thêm từng cột ============
         // Cột 0: Mã SP
@@ -67,7 +71,7 @@ void ProductManagement::loadProductsGrid()
         grid->addWidget(lblName, row, 1);
 
         // Cột 2: Loại sản phẩm
-        QLabel* lblCategory = new QLabel(cat.getName());
+        QLabel* lblCategory = new QLabel(categoryName);
         grid->addWidget(lblCategory, row, 2);
 
         // Cột 3: Giá vốn

@@ -17,6 +17,8 @@ public:
 
     // Search dùng DSA (QuickSort + BinarySearch)
     static vector<Product> searchProducts(const QString& keyword);
+    static vector<Product> getProductsByCategory(int categoryId);
+
 };
 
 #endif // PRODUCTSERVICE_H
