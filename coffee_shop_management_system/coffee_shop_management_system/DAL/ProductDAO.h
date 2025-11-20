@@ -22,4 +22,5 @@ public:
 
     // Search
     static vector<Product> searchByName(const QString& keyword);
+    static vector<Product> getByCategory(int categoryId);
 };

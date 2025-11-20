@@ -32,3 +32,7 @@ bool ProductService::deleteProduct(int productId) {
 vector<Product> ProductService::searchProducts(const QString& keyword) {
     return ProductDAO::searchByName(keyword);
 }
+
+vector<Product> ProductService::getProductsByCategory(int categoryId) {
+    return ProductDAO::getByCategory(categoryId);
+}

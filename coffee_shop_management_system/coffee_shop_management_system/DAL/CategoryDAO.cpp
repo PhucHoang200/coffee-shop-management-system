@@ -15,7 +15,7 @@ vector<Category> CategoryDAO::getAll() {
 
     QSqlQuery q(DbConnection::database());
     if (!q.exec(
-        "SELECT CategoryID, CategoryName, Description"
+        "SELECT CategoryID, Name, Description "
         "FROM Categories ORDER BY CategoryName"
     )) {
         qDebug() << "CategoriesDAO.getAll error:" << q.lastError().text();
@@ -25,7 +25,7 @@ vector<Category> CategoryDAO::getAll() {
     while (q.next()) {
         Category c;
         c.setCategoryId(q.value("CategoryID").toInt());
-        c.setName(q.value("CategoryName").toString());
+        c.setName(q.value("Name").toString());
         c.setDescription(q.value("Description").toString());
         list.push_back(c);
     }
@@ -39,7 +39,7 @@ optional<Category> CategoryDAO::getById(int id) {
 
     QSqlQuery q(DbConnection::database());
     q.prepare(
-        "SELECT CategoryID, CategoryName, Description"
+        "SELECT CategoryID, Name, Description "
         "FROM Categories WHERE CategoryID = :id"
     );
     q.bindValue(":id", id);
@@ -52,7 +52,7 @@ optional<Category> CategoryDAO::getById(int id) {
     if (q.next()) {
         Category c;
         c.setCategoryId(q.value("CategoryID").toInt());
-        c.setName(q.value("CategoryName").toString());
+        c.setName(q.value("Name").toString());
         c.setDescription(q.value("Description").toString());
         return c;
     }
@@ -66,8 +66,8 @@ optional<Category> CategoryDAO::getByName(const QString& name) {
 
     QSqlQuery q(DbConnection::database());
     q.prepare(
-        "SELECT CategoryID, CategoryName, Description"
-        "FROM Categories WHERE CategoryName = :name"
+        "SELECT CategoryID, Name, Description "
+        "FROM Categories WHERE Name = :name"
     );
     q.bindValue(":name", name);
 
@@ -79,7 +79,7 @@ optional<Category> CategoryDAO::getByName(const QString& name) {
     if (q.next()) {
         Category c;
         c.setCategoryId(q.value("CategoryID").toInt());
-        c.setName(q.value("CategoryName").toString());
+        c.setName(q.value("Name").toString());
         c.setDescription(q.value("Description").toString());
         return c;
     }
@@ -93,7 +93,7 @@ bool CategoryDAO::insert(const Category& c) {
 
     QSqlQuery q(DbConnection::database());
     q.prepare(
-        "INSERT INTO Categories (CategoryName, Description) "
+        "INSERT INTO Categories (Name, Description) "
         "VALUES (:name, :desc)"
     );
     q.bindValue(":name", c.getName());
@@ -112,7 +112,7 @@ bool CategoryDAO::update(const Category& c) {
 
     QSqlQuery q(DbConnection::database());
     q.prepare(
-        "UPDATE Categories SET CategoryName = :name, Description = :desc "
+        "UPDATE Categories SET Name = :name, Description = :desc "
         "WHERE CategoryID = :id"
     );
     q.bindValue(":name", c.getName());

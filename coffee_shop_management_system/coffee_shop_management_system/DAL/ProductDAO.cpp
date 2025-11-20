@@ -201,3 +201,40 @@ vector<Product> ProductDAO::searchByName(const QString& keyword) {
 
     return result;
 }
+
+vector<Product> ProductDAO::getByCategory(int categoryId) {
+    vector<Product> list;
+
+    // Kiểm tra kết nối
+    if (!DbConnection::database().isOpen()) {
+        if (!DbConnection::connect()) return list;
+    }
+
+    QSqlQuery query(DbConnection::database());
+    query.prepare("SELECT ProductID, CategoryID, Name, Price, ImagePath "
+        "FROM Products WHERE CategoryID = :categoryId");
+    query.bindValue(":categoryId", categoryId);
+
+    if (!query.exec()) {
+        qDebug() << "ProductDAO.getByCategory exec error:" << query.lastError().text();
+        return list;
+    }
+
+    while (query.next()) {
+        Product p;
+        p.setProductId(query.value("ProductID").toInt());
+        p.setCategoryId(query.value("CategoryID").toInt());
+        p.setName(query.value("Name").toString());
+        p.setPrice(query.value("Price").toDouble());
+        p.setImagePath(query.value("ImagePath").toString());
+        list.push_back(p);
+    }
+
+    // Sort nếu muốn giống getAll()
+    if (!list.empty()) {
+        quickSort(list, 0, list.size() - 1);
+    }
+
+    return list;
+}
+
