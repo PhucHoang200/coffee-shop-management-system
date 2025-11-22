@@ -161,6 +161,7 @@
     <ClInclude Include="DAL\RecipeItemDAO.h" />
     <ClInclude Include="DAL\RoleDAO.h" />
     <ClInclude Include="DAL\UserDAO.h" />
+    <ClInclude Include="DTO\CartItemModel.h" />
     <ClInclude Include="DTO\Category.h" />
     <ClInclude Include="DTO\Order.h" />
     <ClInclude Include="DTO\OrderItem.h" />

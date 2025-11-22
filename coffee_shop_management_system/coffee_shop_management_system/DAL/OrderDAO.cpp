@@ -1,4 +1,4 @@
-#include "OrderDAO.h"
+﻿#include "OrderDAO.h"
 #include <QSqlQuery>
 #include <QSqlError>
 #include <QVariant>
@@ -64,9 +64,9 @@ optional<Order> OrderDAO::getById(int id) {
     return nullopt;
 }
 
-bool OrderDAO::insert(const Order& o) {
+int OrderDAO::insert(const Order& o) {
     if (!DbConnection::database().isOpen() && !DbConnection::connect())
-        return false;
+        return -1; // trả về -1 nếu fail
 
     QSqlQuery q(DbConnection::database());
     q.prepare(
@@ -80,10 +80,10 @@ bool OrderDAO::insert(const Order& o) {
 
     if (!q.exec()) {
         qDebug() << "OrdersDAO.insert error:" << q.lastError().text();
-        return false;
+        return -1;
     }
 
-    return true;
+    return q.lastInsertId().toInt(); // <-- trả về OrderId mới
 }
 
 bool OrderDAO::update(const Order& o) {
