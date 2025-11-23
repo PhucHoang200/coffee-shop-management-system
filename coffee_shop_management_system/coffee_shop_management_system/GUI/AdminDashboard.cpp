@@ -34,6 +34,19 @@ AdminDashboard::AdminDashboard(const User& loggedUser, QWidget* parent)
     employeePage = nullptr;
     reportPage = nullptr;
 
+    // ---- Kết nối signal từ HomeWidget ----
+    connect(homePage, &HomeWidget::navigateToPage, this, [=](int i) {
+        switch (i) {
+        case 0: on_button1_clicked(); break;
+        case 1: on_button2_clicked(); break;
+        case 2: on_button3_clicked(); break;
+        case 3: on_button4_clicked(); break;
+        case 4: on_button5_clicked(); break;
+        case 5: on_button6_clicked(); break;
+        }
+        });
+
+
 
     // ---- Load trang mặc định (Home) ----
     loadPage(homePage);
@@ -92,6 +105,8 @@ void AdminDashboard::loadPage(QWidget* page)
 void AdminDashboard::on_button1_clicked()
 {
     loadPage(homePage);
+    homePage->resetMenuButtons();
+
 }
 
 void AdminDashboard::on_button2_clicked()
