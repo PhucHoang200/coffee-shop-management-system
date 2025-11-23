@@ -181,9 +181,6 @@
     <QtMoc Include="GUI\AdminDashboard.h" />
     <QtMoc Include="GUI\LoginDialog.h" />
   </ItemGroup>
-  <ItemGroup>
-    <Image Include="..\x64\Debug\images\product1.jpg" />
-  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Condition="Exists('$(QtMsBuild)\qt.targets')">
     <Import Project="$(QtMsBuild)\qt.targets" />
