@@ -416,3 +416,34 @@ FodyWeavers.xsd
 *.msix
 *.msm
 *.msp
+
+# Qt Creator user-specific files
+*.pro.user
+*.pro.user.*
+*.creator.user
+*.user
+*.qmake.stash
+
+# CMake build directories
+build-*/
+cmake-build-*/
+
+# Qt generated files (moc, ui, qrc)
+moc_*/
+ui_*/
+qrc_*/
+
+# Qt Creator settings
+.qtc_clangd/
+.qtc_misc/
+
+# Backup or temp files
+*.autosave
+*.qmlc
+*.jsc
+*.qmlproject.user
+
+# Visual Studio Qt plugin generated files
+*.vcxproj.user
+*.filters
+*.vcxproj.filters
