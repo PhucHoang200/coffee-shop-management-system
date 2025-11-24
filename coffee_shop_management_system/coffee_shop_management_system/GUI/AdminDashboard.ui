@@ -135,7 +135,7 @@ QPushButton:checked:hover {
 </string>
      </property>
      <property name="text">
-      <string>Đơn hàng</string>
+      <string>Bán hàng</string>
      </property>
     </widget>
     <widget class="QPushButton" name="button3">
