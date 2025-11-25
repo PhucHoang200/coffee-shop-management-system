@@ -2,6 +2,8 @@
 #include <QMap>
 #include "DTO/CartItemModel.h"
 #include "ui_OrderWidget.h"
+#include <QScrollArea>
+#include <QVBoxLayout>
 
 class OrderWidget : public QWidget
 {
@@ -14,11 +16,16 @@ public:
 private:
     Ui::OrderWidgetClass ui;
 
+    QWidget* cartContainer;
+    QVBoxLayout* cartLayout;
+    QLabel* totalLabel = nullptr;
+
     // GIỎ HÀNG: key = productId, value = CartItemModel
-    QMap<int, CartItemModel> cart;
+    QList<CartItemModel> cart; // thay QMap<int, CartItemModel>
+    void updateTotalLabel();
 
 private slots:
-    void loadProductsGrid();
+    void loadProductsGrid(const QString& keyword = "");
     void onProductClicked(int id, const QString& name, double price, const QString& imagePath);
     void refreshCartUI();
     double calculateTotal() const;
