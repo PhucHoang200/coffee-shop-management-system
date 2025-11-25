@@ -9,6 +9,7 @@ class InventoryWidget;
 class EmployeeWidget;
 class ReportWidget;
 class HomeWidget;   // Trang chủ
+class OrderManagement;
 
 namespace Ui { class AdminDashboard; }
 
@@ -27,6 +28,7 @@ private slots:
     void on_button4_clicked(); // Inventory
     void on_button5_clicked(); // Employees
     void on_button6_clicked(); // Reports
+	void on_button7_clicked(); // Order Management
 
 private:
     Ui::AdminDashboard* ui;
@@ -39,6 +41,7 @@ private:
     InventoryWidget* inventoryPage;
     EmployeeWidget* employeePage;
     ReportWidget* reportPage;
+	OrderManagement* orderManagementPage;
 
     void loadPage(QWidget* page);
 };

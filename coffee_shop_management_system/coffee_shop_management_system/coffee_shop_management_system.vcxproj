@@ -130,6 +130,7 @@
     <ClCompile Include="GUI\HomeWidget.cpp" />
     <ClCompile Include="GUI\InventoryWidget.cpp" />
     <ClCompile Include="GUI\LoginDialog.cpp" />
+    <ClCompile Include="GUI\OrderManagement.cpp" />
     <ClCompile Include="GUI\OrderWidget.cpp" />
     <ClCompile Include="GUI\ProductManagement.cpp" />
     <ClCompile Include="GUI\ReportWidget.cpp" />
@@ -140,6 +141,7 @@
     <QtUic Include="GUI\HomeWidget.ui" />
     <QtUic Include="GUI\InventoryWidget.ui" />
     <QtUic Include="GUI\LoginDialog.ui" />
+    <QtUic Include="GUI\OrderManagement.ui" />
     <QtUic Include="GUI\OrderWidget.ui" />
     <QtUic Include="GUI\ProductManagement.ui" />
     <QtUic Include="GUI\ReportWidget.ui" />
@@ -157,6 +159,7 @@
     <ClInclude Include="DAL\OrderDAO.h" />
     <ClInclude Include="DAL\OrderItemDAO.h" />
     <ClInclude Include="DAL\ProductDAO.h" />
+    <QtMoc Include="GUI\OrderManagement.h" />
     <QtMoc Include="DAL\ProductItemWidget.h" />
     <ClInclude Include="DAL\RecipeItemDAO.h" />
     <ClInclude Include="DAL\RoleDAO.h" />

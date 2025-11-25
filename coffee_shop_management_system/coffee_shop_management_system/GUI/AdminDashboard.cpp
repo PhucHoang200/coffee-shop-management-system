@@ -10,6 +10,7 @@
 #include <GUI/EmployeeWidget.h>
 #include <GUI/ReportWidget.h>
 #include <GUI/HomeWidget.h>
+#include <GUI/OrderManagement.h>
 
 AdminDashboard::AdminDashboard(const User& loggedUser, QWidget* parent)
     : QMainWindow(parent)
@@ -33,6 +34,7 @@ AdminDashboard::AdminDashboard(const User& loggedUser, QWidget* parent)
     inventoryPage = nullptr;
     employeePage = nullptr;
     reportPage = nullptr;
+	orderManagementPage = nullptr;
 
     // ---- Kết nối signal từ HomeWidget ----
     connect(homePage, &HomeWidget::navigateToPage, this, [=](int i) {
@@ -43,6 +45,7 @@ AdminDashboard::AdminDashboard(const User& loggedUser, QWidget* parent)
         case 3: on_button4_clicked(); break;
         case 4: on_button5_clicked(); break;
         case 5: on_button6_clicked(); break;
+		case 6: on_button7_clicked(); break;
         }
         });
 
@@ -62,6 +65,7 @@ AdminDashboard::AdminDashboard(const User& loggedUser, QWidget* parent)
     ui->button4->setCheckable(true);
     ui->button5->setCheckable(true);
     ui->button6->setCheckable(true);
+	ui->button7->setCheckable(true);
 
     QButtonGroup* group = new QButtonGroup(this);
     group->setExclusive(true);
@@ -72,15 +76,14 @@ AdminDashboard::AdminDashboard(const User& loggedUser, QWidget* parent)
     group->addButton(ui->button4);
     group->addButton(ui->button5);
     group->addButton(ui->button6);
+	group->addButton(ui->button7);
 }
 
 AdminDashboard::~AdminDashboard() {
     delete ui;
 }
 
-// ========================
 // LOAD WIDGET VÀO FRAME
-// ========================
 void AdminDashboard::loadPage(QWidget* page)
 {
     QLayout* layout = ui->frame_2->layout();
@@ -98,10 +101,7 @@ void AdminDashboard::loadPage(QWidget* page)
     page->show();
 }
 
-// ========================
 // BUTTON SLOTS
-// ========================
-
 void AdminDashboard::on_button1_clicked()
 {
     loadPage(homePage);
@@ -142,5 +142,12 @@ void AdminDashboard::on_button6_clicked()
     if (!reportPage)
         reportPage = new ReportWidget(ui->frame_2);
     loadPage(reportPage);
+}
+
+void AdminDashboard::on_button7_clicked()
+{
+	if (!orderManagementPage)
+		orderManagementPage = new OrderManagement(ui->frame_2);
+	loadPage(orderManagementPage);
 }
 

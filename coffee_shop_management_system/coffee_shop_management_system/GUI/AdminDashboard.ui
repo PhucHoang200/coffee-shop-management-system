@@ -142,7 +142,7 @@ QPushButton:checked:hover {
      <property name="geometry">
       <rect>
        <x>0</x>
-       <y>120</y>
+       <y>170</y>
        <width>200</width>
        <height>50</height>
       </rect>
@@ -190,7 +190,7 @@ QPushButton:checked:hover {
      <property name="geometry">
       <rect>
        <x>0</x>
-       <y>170</y>
+       <y>220</y>
        <width>200</width>
        <height>50</height>
       </rect>
@@ -238,7 +238,7 @@ QPushButton:checked:hover {
      <property name="geometry">
       <rect>
        <x>0</x>
-       <y>220</y>
+       <y>270</y>
        <width>200</width>
        <height>50</height>
       </rect>
@@ -286,7 +286,7 @@ QPushButton:checked:hover {
      <property name="geometry">
       <rect>
        <x>0</x>
-       <y>270</y>
+       <y>320</y>
        <width>200</width>
        <height>50</height>
       </rect>
@@ -328,6 +328,54 @@ QPushButton:checked:hover {
      </property>
      <property name="text">
       <string>Báo cáo</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="button7">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>120</y>
+       <width>200</width>
+       <height>50</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>20</pointsize>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QPushButton {
+    border: none;
+    background-color: rgb(250, 250, 250);   /* default */
+    color: black;
+    padding: 8px 16px;
+    border-radius: 20px;
+}
+
+/* Hover khi chưa checked */
+QPushButton:hover:!checked {
+    background-color: rgb(235, 235, 235);   /* hover nhẹ */
+}
+
+/* Khi nhấn */
+QPushButton:pressed {
+    background-color: rgb(210, 210, 210);
+}
+
+/* Khi checked (đang chọn) */
+QPushButton:checked {
+    background-color: rgb(200, 200, 200);
+}
+
+/* Hover khi đang checked (clicked) */
+QPushButton:checked:hover {
+    background-color: rgb(190, 190, 190);  /* đậm hơn chút */
+}
+</string>
+     </property>
+     <property name="text">
+      <string>Đơn hàng</string>
      </property>
     </widget>
    </widget>
