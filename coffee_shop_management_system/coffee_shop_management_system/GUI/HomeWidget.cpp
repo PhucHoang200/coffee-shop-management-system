@@ -8,9 +8,7 @@ HomeWidget::HomeWidget(QWidget* parent)
 {
     ui.setupUi(this);
 
-    // ========================================================
     // 1. Đặt hình nền
-    // ========================================================
     QString imagePath = "C:/coffee_shop/coffee-shop-management-system/"
         "coffee_shop_management_system/"
         "coffee_shop_management_system/"
@@ -29,24 +27,21 @@ HomeWidget::HomeWidget(QWidget* parent)
         qDebug() << "Không load được hình nền:" << imagePath;
     }
 
-    // ========================================================
-    // 2. Lấy 6 button trong UI
-    // ========================================================
+    // 2. Lấy 7 button trong UI
     buttons = {
         ui.button1,
         ui.button2,
         ui.button3,
         ui.button4,
         ui.button5,
-        ui.button6
+        ui.button6,
+        ui.button7
     };
 
-    // ========================================================
     // 3. Gán Style Sheet (trong suốt + hover + click)
-    // ========================================================
     const QString btnStyle =
         "QPushButton {"
-        "   background-color: rgba(255, 255, 255, 76);"   /* 50% trong suốt = 128/255 */
+        "   background-color: rgba(255, 255, 255, 76);"   /* 30% trong suốt = 76/255 */
         "   padding: 6px;"
         "   font-size: 22px;"
         "   color: white;"
@@ -60,10 +55,7 @@ HomeWidget::HomeWidget(QWidget* parent)
         "}";
 
 
-
-    // ========================================================
     // 4. Gán style + connect emit navigateToPage(i)
-    // ========================================================
     for (int i = 0; i < buttons.size(); ++i)
     {
         QPushButton* btn = buttons[i];
@@ -76,9 +68,7 @@ HomeWidget::HomeWidget(QWidget* parent)
     }
 }
 
-// ============================================================
-// Reset trạng thái 6 button khi quay lại HomeWidget
-// ============================================================
+// Reset trạng thái 7 button khi quay lại HomeWidget
 void HomeWidget::resetMenuButtons()
 {
     for (QPushButton* btn : buttons)
